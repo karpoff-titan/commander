@@ -1,0 +1,19 @@
+{
+  "name": "@servicetitan/commander",
+  "version": "1.0.0",
+  "description": "command-line helper for service titan projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install -g --force"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "stc": "./index.js"
+  },
+  "dependencies": {
+    "@types/node": "^14.6.4",
+    "commander": "^6.1.0",
+    "cross-spawn": "^7.0.3"
+  }
+}
