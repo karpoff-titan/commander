@@ -14,7 +14,7 @@ const commandsGit = () => {
         .action(() => {
             cdApp();
             exec(`git gc --prune=now`);
-            exec(`npx rimraf ${join('.git', 'refs', 'remote', 'origin')}`);
+            exec(`npx rimraf ${join('.git', 'refs', 'remotes', 'origin')}`);
         });
 }
 
