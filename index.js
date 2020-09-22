@@ -5,12 +5,16 @@ const {CommanderError} = require('./error');
 const {commandsConfig} = require('./commands-config');
 const {commandsApp} = require('./commands-app');
 const {commandsMre} = require('./commands-mre');
+const {commandsBackendless} = require('./commands-backendless');
+const {commandsGit} = require('./commands-git');
 
 initCommander();
 
 commandsConfig();
 commandsApp();
 commandsMre();
+commandsBackendless();
+commandsGit();
 
 try {
     program.parse(process.argv);

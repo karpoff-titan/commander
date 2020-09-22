@@ -8,7 +8,6 @@ const configFilePath = () => {
 
 const readConfig = () => {
     try {
-        console.log(fs.readFileSync(configFilePath()).toString('utf-8'))
         return JSON.parse(fs.readFileSync(configFilePath()).toString('utf-8'));
     }
     catch (err) {
@@ -26,7 +25,6 @@ const config = {
             throw new CommanderError(`parameter not supported\n supported list: ${Object.values(config.params).join(', ')}`)
         }
 
-        console.log('ww', readConfig())
         return readConfig()[name];
     },
 
