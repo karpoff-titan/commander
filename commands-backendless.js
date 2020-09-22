@@ -1,7 +1,6 @@
 const {cd, join, exec, baseDir} = require('./base');
 const program = require('commander');
 const fs = require('fs');
-const path = require('path');
 
 const commandsBackendless = () => {
     const command = program
