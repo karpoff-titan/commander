@@ -16,6 +16,14 @@ const commandsBackendless = () => {
             fs.writeFileSync('.env', `TARGET_DIR=${join(baseDir(), 'app', 'Apps', 'Web', 'wwwroot')}`);
             exec(`npm start`);
         });
+
+    command
+        .command('i')
+        .description('install backendless app')
+        .action(() => {
+            cd('playground', 'backendless');
+            exec(`npm i`);
+        });
 }
 
 module.exports.commandsBackendless = commandsBackendless;

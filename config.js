@@ -11,7 +11,6 @@ const readConfig = () => {
         return JSON.parse(fs.readFileSync(configFilePath()).toString('utf-8'));
     }
     catch (err) {
-        console.error(err)
         return {};
     }
 }
@@ -40,11 +39,11 @@ const config = {
             throw new CommanderError(`validation error\n${error}`);
         }
 
-        const config = readConfig();
+        const configJson = readConfig();
 
-        config[name] = value;
+        configJson[name] = value;
 
-        fs.writeFileSync(configFilePath(), JSON.stringify(config));
+        fs.writeFileSync(configFilePath(), JSON.stringify(configJson));
     },
 };
 
