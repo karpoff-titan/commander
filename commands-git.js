@@ -9,12 +9,10 @@ const commandsGit = () => {
         .forwardSubcommands();
 
     command
-        .command('ref-app')
-        .description('fix error: cannot lock \'ref/remotes/origin/...\' (usually happens on windows)')
+        .command('gc')
+        .description('fix error: cannot lock \'ref/remotes/origin/...\'')
         .action(() => {
-            cdApp();
             exec(`git gc --prune=now`);
-            exec(`npx rimraf ${join('.git', 'refs', 'remotes', 'origin')}`);
         });
 }
 
