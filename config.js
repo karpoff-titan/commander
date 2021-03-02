@@ -18,13 +18,14 @@ const readConfig = () => {
 const config = {
     params: {
         PATH: 'path',
+        APP: 'app',
     },
     get(name) {
         if (!Object.values(config.params).includes(name)) {
             throw new CommanderError(`parameter not supported\n supported list: ${Object.values(config.params).join(', ')}`)
         }
 
-        return readConfig()[name];
+        return readConfig()[name] || params[name].defaultValue;
     },
 
     set(name, value) {
@@ -59,6 +60,9 @@ const params = {
 
             return 'Directory not exists';
         }
+    },
+    [config.params.APP]: {
+        defaultValue: 'app'
     }
 }
 

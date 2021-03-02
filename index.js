@@ -7,6 +7,7 @@ const {commandsApp} = require('./commands-app');
 const {commandsMre} = require('./commands-mre');
 const {commandsBackendless} = require('./commands-backendless');
 const {commandsGit} = require('./commands-git');
+const {commandsAg} = require('./commands-ag');
 
 initCommander();
 
@@ -15,6 +16,7 @@ commandsApp();
 commandsMre();
 commandsBackendless();
 commandsGit();
+commandsAg();
 
 try {
     program.parse(process.argv);

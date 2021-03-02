@@ -1,4 +1,5 @@
 const {cd, join, exec, baseDir} = require('./base');
+const config = require('./config');
 const program = require('commander');
 const fs = require('fs');
 
@@ -13,7 +14,7 @@ const commandsBackendless = () => {
         .description('start backendless app')
         .action(() => {
             cd('playground', 'backendless');
-            fs.writeFileSync('.env', `TARGET_DIR=${join(baseDir(), 'app', 'Apps', 'Web', 'wwwroot')}`);
+            fs.writeFileSync('.env', `TARGET_DIR=${join(baseDir(), config.get(config.params.APP), 'Apps', 'Web', 'wwwroot')}`);
             exec(`npm start`);
         });
 
