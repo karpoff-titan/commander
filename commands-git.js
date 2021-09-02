@@ -14,6 +14,20 @@ const commandsGit = () => {
         .action(() => {
             exec(`git gc --prune=now`);
         });
+
+    command
+        .command('clean-local')
+        .description('clean all local branches')
+        .action(() => {
+            exec(`git branch | grep -v "master" | xargs git branch -D`);
+        });
+
+    command
+        .command('pull-upstream')
+        .description('pull upstream master branch to local master')
+        .action(() => {
+            exec(`git pull upstream master`);
+        });
 }
 
 module.exports.commandsGit = commandsGit;
