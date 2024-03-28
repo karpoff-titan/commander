@@ -30,6 +30,14 @@ const commandsApp = () => {
             cd('app', 'Clients', 'Web');
             exec(`npm start`);
         });
+
+    command
+        .command('coverage')
+        .description('run unit tests with coverage')
+        .arguments('<folder>')
+        .action(folder => {
+            exec(`startup test ${folder}/.*?/__tests__/.*?\\\\..*?\\\\.ts --coverage --collect-coverage-from=${folder}/**/*.ts`);
+        });
 }
 
 module.exports.commandsApp = commandsApp;

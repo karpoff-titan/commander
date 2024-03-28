@@ -21,6 +21,15 @@ const commandsAg = () => {
         });
 
     command
+        .command('run-g')
+        .description('run in default path')
+        .action(() => {
+            cd('app');
+            exec(`dotnet tool restore`);
+            exec(`dotnet api-client-generator --fastmode -o ./Clients`);
+        });
+
+    command
         .command('run-here')
         .description('run generator in current path')
         .action(() => {

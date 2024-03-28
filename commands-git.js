@@ -1,4 +1,4 @@
-const {cd, join, exec} = require('./base');
+const {cd, exec} = require('./base');
 const program = require('commander');
 
 const commandsGit = () => {
